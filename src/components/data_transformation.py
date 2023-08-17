@@ -22,7 +22,7 @@ class DataTransformation:
 
     def get_data_transformer_obejct(self):
         try:
-            numerical_columns= ['writing_score','reading_score']
+            numerical_columns= ['writing score','reading score']
             categorical_columns = [
                 'gender',
                 'race/ethnicity',
@@ -34,7 +34,7 @@ class DataTransformation:
             num_pipeline = Pipeline(
                 steps = [
                     ("Imputer",SimpleImputer(strategy='median')),
-                    ('Scaler',StandardScaler(with_mean=False))
+                    ("Scaler",StandardScaler(with_mean=False))
                 ]
             )
             cat_pipeline  = Pipeline(
@@ -74,7 +74,7 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformer_obejct()
 
             target_column_name = 'math score'
-            numerical_columns = ['writing_score','reading_score']
+            numerical_columns = ['writing score','reading score']
 
             input_feature_train_df = train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df = train_df[target_column_name]
